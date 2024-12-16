@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>About Us</h1>
+    <p>This is the About Us page</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Explicitly include <tbody> -->
+            <tr *ngFor="let employee of employees">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.email }}</td>
+                <td><button type="button" class="btn btn-danger">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="show()" class="btn btn-secondary">Click Here</button>
+</div>

@@ -1,0 +1,29 @@
+<h5 class="text-center mb-3">Your Cart</h5>
+
+<!-- Search Bar -->
+
+
+<!-- Cart Table -->
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ticket  Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cart of filteredCarts">
+      <td>{{ cart.productName }}</td>
+      <td>{{ cart.productQuantity }}</td>
+      <td>{{ cart.TotalPrice | currency }}</td>
+      <td>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <button [routerLink]="['/edit', cart._id]" class="btn btn-primary">Edit</button>
+          <button (click)="deleteCart(cart._id)" class="btn btn-danger">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

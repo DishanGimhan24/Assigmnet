@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <h2>Edit Cart</h2>
+  <form [formGroup]="cartForm" (ngSubmit)="updateCart()">
+    <div class="form-group mb-3">
+      <label for="userName">User Name</label>
+      <input
+        id="userName"
+        formControlName="userName"
+        class="form-control"
+        placeholder="Enter user name"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="productName">Ticket  Name</label>
+      <input
+        id="productName"
+        formControlName="productName"
+        class="form-control"
+        placeholder="Enter product name"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="productQuantity">Quantity</label>
+      <input
+        id="productQuantity"
+        formControlName="productQuantity"
+        type="number"
+        class="form-control"
+        placeholder="Enter quantity"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="TotalPrice">Price</label>
+      <input
+        id="TotalPrice"
+        formControlName="TotalPrice"
+        type="number"
+        class="form-control"
+        placeholder="Enter price"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>

@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h5 class="text-center mb-4">Cart</h5>
+  
+        <!-- Form to add new cart -->
+        <form [formGroup]="cartForm" (ngSubmit)="addCart()">
+          <div class="form-group mb-3">
+            <label for="userName">User Name</label>
+            <input
+              id="userName"
+              formControlName="userName"
+              class="form-control"
+              placeholder="Enter your name"
+            />
+            <div *ngIf="cartForm.get('userName')?.invalid && cartForm.get('userName')?.touched" class="text-danger">
+              Name is required
+            </div>
+          </div>
+  
+          <div class="form-group mb-3">
+            <label for="productName">Product Name</label>
+            <input
+              id="productName"
+              formControlName="productName"
+              class="form-control"
+              placeholder="Enter product name"
+            />
+            <div *ngIf="cartForm.get('productName')?.invalid && cartForm.get('productName')?.touched" class="text-danger">
+              Product name is required
+            </div>
+          </div>
+  
+          <div class="form-group mb-3">
+            <label for="productQuantity">Quantity</label>
+            <input
+              id="productQuantity"
+              formControlName="productQuantity"
+              class="form-control"
+              placeholder="Enter quantity"
+              type="number"
+            />
+            <div *ngIf="cartForm.get('productQuantity')?.invalid && cartForm.get('productQuantity')?.touched" class="text-danger">
+              Quantity is required
+            </div>
+          </div>
+  
+          <div class="form-group mb-3">
+            <label for="TotalPrice">Price</label>
+            <input
+              id="TotalPrice"
+              formControlName="TotalPrice"
+              class="form-control"
+              placeholder="Enter price"
+              type="number"
+            />
+            <div *ngIf="cartForm.get('TotalPrice')?.invalid && cartForm.get('TotalPrice')?.touched" class="text-danger">
+              Price is required
+            </div>
+          </div>
+  
+          <button type="submit" [disabled]="cartForm.invalid" class="btn btn-primary w-100">Add to Cart</button>
+        </form>
+  
+        <hr />
+  
+       
+        
+        
+      </div>
+    </div>
+  </div>
+  
